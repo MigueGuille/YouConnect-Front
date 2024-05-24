@@ -2,15 +2,39 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Buttom from "./Buttom";
 import Input from "./Input";
+import fetcho from "../services/fetcho";
 
 
 const Login = () => {
+  const [user, setUser] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const ClickLogin = async () => {
+    try{
+      const body = {password: password, 
+        username: user};
+      console.log(body)
+      url = 'login'
+      console.log(`${"http://localhost:3000"}${url}`)
+      const fetchPost = {url: '/login', method: 'POST', body};
+
+      const result = await fetcho(fetchPost)
+
+      if(result){
+        console.log(result)
+        alert('Has iniciado sesion')
+      }
+
+    } catch (error){
+      console.log(error)
+    }
+  }
+
     return (
         <View style={styles.container}>
             <Text style={styles.TitleText}>YouConnect</Text>
-            <Input placeHolder="Email" value="" styles={styles.input}/>
-            <Input placeHolder="Password" value="" styles={styles.input}/>
-            <Buttom title="Log In" onPress={() => alert("Has presionado este boton")}/>
+            <Input placeHolder="Email" value={user} styles={styles.input} onChangeText={setUser}/>
+            <Input placeHolder="Password" value={password} styles={styles.input} onChangeText={setPassword}/>
+            <Buttom title="Log In" onPress={() => ClickLogin()}/>
         </View>
     )
 }
