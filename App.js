@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
 import {StyleSheet, View } from 'react-native';
-import  Login from './src/components/Login.jsx';
+import  Login from './src/components/Views/Login.jsx';
 
 export default function App() {
 

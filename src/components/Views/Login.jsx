@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Buttom from "./Buttom";
-import Input from "./Input";
-import fetcho from "../services/fetcho";
+import Buttom from "../Buttom";
+import Input from "../Input";
+import fetcho from "../../services/fetcho";
 
 
 const Login = () => {
