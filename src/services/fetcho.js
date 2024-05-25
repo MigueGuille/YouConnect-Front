@@ -18,7 +18,7 @@ const fetcho = async ({ url, method, body }) => {
   
       const config = method.toLowerCase() === "post" ? configPost : configGet;
   
-      const response = await fetch(`${"http://192.168.0.106:7878/auth"}${url}`, config);
+      const response = await fetch(`${"https://youconnect-production.up.railway.app/"}${url}`, config);
       console.log(response)
       const data = await response.json();
   

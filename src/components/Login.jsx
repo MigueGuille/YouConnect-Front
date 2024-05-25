@@ -8,18 +8,17 @@ import fetcho from "../services/fetcho";
 const Login = () => {
   const [user, setUser] = React.useState('');
   const [password, setPassword] = React.useState('');
+  
   const ClickLogin = async () => {
     try{
       const body = {password: password, 
         userName: user};
       console.log(body)
-      // url = 'login'
-      // console.log(`${"http://localhost:7878/"}${url}`)
-      const fetchPost = {url: '/login', method: 'POST', body};
+      const fetchPost = {url: 'auth/login', method: 'POST', body};
 
       const result = await fetcho(fetchPost)
 
-      if(result){
+      if(result.token){
         console.log(result)
         alert('Has iniciado sesion')
       }
