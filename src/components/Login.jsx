@@ -11,10 +11,10 @@ const Login = () => {
   const ClickLogin = async () => {
     try{
       const body = {password: password, 
-        username: user};
+        userName: user};
       console.log(body)
-      url = 'login'
-      console.log(`${"http://localhost:3000"}${url}`)
+      // url = 'login'
+      // console.log(`${"http://localhost:7878/"}${url}`)
       const fetchPost = {url: '/login', method: 'POST', body};
 
       const result = await fetcho(fetchPost)
